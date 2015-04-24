@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.TextView;
 
 //import com.example.p005_custom_listview.POJO;
@@ -68,13 +69,23 @@ public class CustomAdapter extends BaseAdapter implements OnClickListener
     	
     	TextView tvPhone = (TextView)convertView.findViewById(R.id.tvPhone);
     	tvPhone.setText(phbook.getPhone());	
-		
-		return convertView;
+    	
+    	Button btnRemove = (Button) convertView.findViewById(R.id.Remove);
+    	
+    	 //btnRemove.setFocusableInTouchMode(false);
+         btnRemove.setFocusable(false);
+        // btnRemove.setOnClickListener(this);
+         
+        // btnRemove.setTag(phbook);
+    	
+    	return convertView;
 	}
 
 	@Override
-	public void onClick(View v) {
-		// TODO Auto-generated method stub
+	public void onClick(View view) {
+		//POJO entry = (POJO) view.getTag();
+       // listPhonebook.remove(entry);
+       // notifyDataSetChanged();
 
 	}
 
